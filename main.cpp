@@ -8,8 +8,13 @@ int main(int argc, char *argv[])
 {
     string fileName, saveName;
     double theta, alpha;
+    bool printHelp;
     
-    if (argc > 1)
+    if (argc <= 1)
+    {
+        printHelp = true;
+    }
+    else
     {
         fileName = argv[1];
     
@@ -34,12 +39,28 @@ int main(int argc, char *argv[])
                 i++;
                 saveName = argv[i];
             }
+            else if (!strcmp(argv[i], "-h") || !strcmp(argv[i], "--help"))
+            {
+                printHelp = true;
+            }
             else
             {
                 cout << argv[i] << "is not a valid option.\n";
                 return 1;
             }
         }
+    }
+    
+    if (printHelp)
+    {
+        cout << "\n================================== Color2Gray ==================================\n\n";
+        cout << "Usage: color2gray [fileName] [option <arg>] [option <arg>] [...]\n\n";
+        cout << "Options:\n";
+        cout << "  -t, --theta    : define value in degrees of the theta parameter (default: 45)\n";
+        cout << "  -a, --alpha    : define value of the alpha parameter (default: 10)\n";
+        cout << "  -s, --savename : define name of the output image file\n";
+        cout << "  -h, --help     : show this help and exit\n\n";
+        return 0;
     }
 
     Mat image = imread(fileName);
