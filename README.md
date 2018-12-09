@@ -4,7 +4,7 @@ This implementation of the color2gray algorithm [(Gooch et al., 2005)](http://ww
 This implementation has a Command-Line Interface; there's a GUI version soon to be uploaded to [Júlia's GitHub account](https://github.com/juviolato/color2gray).
 
 ### Compile
-To compile this program, simply execute the comand ```$make``` to call Makefile. This program depends on the OpenCV library.
+To compile this program, simply execute the command ```$make``` to call Makefile. This program depends on the OpenCV library.
 
 ### Authors
 * **Artur Waquil Campana**

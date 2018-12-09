@@ -52,6 +52,12 @@ int main(int argc, char *argv[])
 
     image = color2gray(image, theta, alpha, 0);
 
+    if (saveName.empty())
+    {
+        cout << "Save as (include extension): ";
+        cin >> saveName;
+    }
+
     imwrite(saveName, image);
 
     return 0;
