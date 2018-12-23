@@ -2,7 +2,7 @@
 
 CC=g++
 CFLAGS=-c -Wall -std=c++11
-INCLUDE=-lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_videoio -lopencv_imgcodecs
+INCLUDE=-lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_imgcodecs
 
 all: main.o color2gray.o
 	$(CC) main.o color2gray.o $(INCLUDE) -o color2gray
